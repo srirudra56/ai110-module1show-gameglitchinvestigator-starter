@@ -26,18 +26,33 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+The purpose of the game was to challenge the player to find the right number by giving secret numberes and hints with too high or too low within a limited number of attempts. 
+
 - [ ] Detail which bugs you found.
+1. The hint logic was reversed. I put 31, when the secret number was 41, and instead of telling me to "GO HIGHER" it said "GO LOWER" 
+2. When I would click new game after finishing one of them, it wouldn't reset 
+3. The attempt would stay at 1, when the attempt should've been 0 because the game didnt start yet. Showing an inaccurate number of attempts
+
 - [ ] Explain what fixes you applied.
+changed 3 functions and 
+1. Correcte the logic in check_guess function, so that guesses below secret number can say "GO HIGHER" and above that say "GO LOWER" 
+2. Updated the New Game mode so it reset and it made it reset everything such as attempts, status, score, history, and secret number
+3. Fixed the attempt tracker so that it counts and correctly reflects the correct number of attempts made by the player
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User has to enter a value in the text box
+2. User enters 31
+3. The game returns "TOO HIGH" as the number is higher than the secret number
+4. The score and the atempt updates after entering the value 
+5. User guesses another number close to the actual number
+6. Game provides another hint
+7. User enters the right number
+8. Game displays winning message and final score
+9. User clicks "New Game"
+10. Resets the game with new secret number and reset score
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
